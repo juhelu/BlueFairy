@@ -1,0 +1,149 @@
+/* © 2026 Blue Fairy Coffee Shop — Todos os direitos reservados. Veja LICENSE. */
+:root{
+  --azul:#94a3cc; --azul-claro:#adb8d8; --ouro:#e8d3a0; --ouro-esc:#a98a4b;
+  --texto:#2b2b3b; --fundo:#fefefd;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat','Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--fundo);color:var(--texto);min-height:100vh;line-height:1.55;
+  -webkit-user-drag:none;-webkit-touch-callout:none}
+a{color:inherit}
+img,.img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
+
+/* ---------- Marca d'água de dissuasão (cobre a página, não bloqueia cliques) ---------- */
+body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='180'><text x='20' y='110' transform='rotate(-24 130 90)' font-family='Georgia,serif' font-size='15' fill='%237d8bb8' fill-opacity='.16'>© Blue Fairy Coffee Shop</text></svg>")}
+@media print{body{display:none!important}}
+
+/* ---------- Imagens como fundo (sem menu "abrir imagem em nova guia") ---------- */
+.img{background-repeat:no-repeat;background-position:center;background-size:cover;display:block}
+.img-fada{background-image:url("../img/fada.png");background-size:contain}
+.img-amb1{background-image:url("../img/ambiente-1.jpg")}
+.img-amb2{background-image:url("../img/ambiente-2.jpg")}
+.img-amb3{background-image:url("../img/ambiente-3.jpg")}
+.img-gabrielle{background-image:url("../img/equipe-gabrielle.jpg");background-size:185%;background-position:50% 30%}
+.img-julia{background-image:url("../img/equipe-julia.jpg");background-position:50% 25%}
+.img-gabrielly{background-image:url("../img/equipe-gabrielly.jpg")}
+.img-lorenzo{background-image:url("../img/equipe-lorenzo.jpg");background-position:50% 25%}
+
+/* ---------- Home ---------- */
+.home{position:relative;overflow:hidden;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  background:radial-gradient(ellipse at 30% 40%,#fff 0%,#fbf9f4 60%,#f4f1ea 100%)}
+.brilhos{position:absolute;inset:0;pointer-events:none;z-index:0}
+.brilho{position:absolute;color:var(--ouro);opacity:0;animation:cintila 4s ease-in-out infinite}
+@keyframes cintila{0%,100%{opacity:0;transform:translateY(0) scale(.6)}50%{opacity:.9;transform:translateY(-14px) scale(1.1)}}
+@media (prefers-reduced-motion:reduce){.brilho{animation:none;opacity:.5}}
+.marca{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:2rem}
+.marca-linha{display:flex;align-items:center;gap:1.2rem}
+.marca .img-fada{width:min(200px,28vw);aspect-ratio:350/421}
+.logo-texto{font-family:var(--sans);font-weight:300;color:var(--ouro);letter-spacing:.35em;line-height:1.15}
+.logo-texto .grande{display:block;font-size:clamp(2.2rem,5vw,3.8rem)}
+.logo-texto .pequeno{display:block;font-size:.72rem;letter-spacing:.35em;margin-top:.3rem}
+.slogan{margin-top:1.6rem;text-align:center;font-family:var(--serif);font-weight:700;color:var(--ouro);
+  letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;max-width:34rem;line-height:1.9}
+.painel{position:relative;z-index:1;background:var(--azul);width:min(100%,475px);margin:0 auto;
+  padding:2.2rem 1.4rem;display:flex;flex-direction:column;gap:2rem}
+.painel a{display:block;text-align:center;text-decoration:none;color:var(--ouro);font-family:var(--serif);
+  font-weight:700;font-size:1.25rem;padding:1.05rem 0;border:1px solid var(--ouro);transition:background .25s,color .25s}
+.painel a:hover,.painel a:focus-visible{background:var(--ouro);color:#fff;outline:none}
+.rodape-mini{position:absolute;bottom:.8rem;left:0;right:0;text-align:center;font-size:.7rem;color:#b6a77d;z-index:1}
+
+/* ---------- Páginas internas ---------- */
+.topo{background:var(--azul-claro);display:flex;align-items:center;justify-content:space-between;
+  padding:.6rem 1.4rem;gap:1rem;min-height:112px}
+.topo a.marca-topo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.topo .img-fada{width:70px;aspect-ratio:350/421}
+.topo .logo-texto .grande{font-size:1.9rem}
+.topo .logo-texto .pequeno{font-size:.5rem}
+.topo h1{font-family:var(--sans);font-weight:300;color:var(--ouro);letter-spacing:.3em;text-align:right;
+  font-size:clamp(1.5rem,3.5vw,2.6rem);line-height:1.2;text-transform:uppercase}
+.voltar{display:inline-block;margin:1rem 1.4rem 0;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro-esc);text-decoration:none}
+.voltar:hover{text-decoration:underline}
+.conteudo{max-width:1000px;margin:0 auto;padding:2rem 1.4rem 3rem}
+.texto-ouro{color:var(--ouro-esc);font-size:1.05rem;text-align:justify}
+.rodape{text-align:center;font-size:.72rem;color:#9a9ab0;padding:1.4rem 1rem 2rem}
+
+/* ---------- Cardápio ---------- */
+.cardapio{position:relative;max-width:820px;margin:0 auto;padding:3.5rem 2rem 2rem}
+.cardapio::before{content:"";position:absolute;left:0;top:2rem;bottom:0;border-left:2px solid var(--ouro)}
+.cardapio::after{content:"";position:absolute;left:0;right:0;top:2rem;border-top:2px solid var(--ouro)}
+.cardapio-fada{position:absolute;top:-1.5rem;left:-1.2rem;width:110px;aspect-ratio:467/561;z-index:2}
+.duas-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem 3rem;position:relative;z-index:1}
+.secao-titulo{font-weight:700;letter-spacing:.45em;font-size:.95rem;margin:1.6rem 0 1rem;text-transform:uppercase}
+.item{margin-bottom:1.1rem}
+.item .linha{display:flex;justify-content:space-between;gap:.6rem;align-items:center;font-weight:700;font-size:.92rem}
+.item .linha span.nome{display:flex;align-items:center;gap:.45rem}
+.item p{font-size:.74rem;color:#444;margin-top:.15rem;max-width:25rem}
+.sopas{text-align:center;margin:1.2rem 0;border-top:1px solid var(--ouro);border-bottom:1px solid var(--ouro);padding:.4rem 0 1rem}
+.sopas .secao-titulo{margin-top:.8rem}
+.sopas .preco{font-size:.92rem;margin-bottom:.8rem}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tres .item .linha{justify-content:center}
+.tres .item p{margin:.2rem auto 0;text-align:center}
+.nota{font-style:italic;font-size:.75rem}
+.bebida{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.92rem;margin-bottom:.7rem;gap:.5rem}
+.bebida .nome{display:flex;align-items:center;gap:.45rem}
+.especial{display:flex;justify-content:center;align-items:center;gap:1rem;font-weight:700;font-size:.92rem;margin:1.2rem 0 .4rem;flex-wrap:wrap}
+.cardapio-marca{font-weight:300;color:var(--ouro);text-align:center;letter-spacing:.4em;font-size:clamp(2rem,8vw,4.2rem);margin-top:1.5rem;line-height:1.1}
+.cardapio-marca small{display:block;font-size:.3em;letter-spacing:.5em}
+
+/* Bandeiras em CSS puro (aparecem em qualquer sistema) */
+.flag{display:inline-block;width:20px;height:13px;border:1px solid rgba(0,0,0,.12);flex:none;position:relative;vertical-align:middle}
+.flag-in{background:linear-gradient(#f93 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+.flag-in::after{content:"";position:absolute;left:7px;top:3.5px;width:4px;height:4px;border-radius:50%;border:1px solid #008;}
+.flag-id{background:linear-gradient(#e70011 50%,#fff 50%)}
+.flag-th{background:linear-gradient(#a51931 16.6%,#fff 16.6% 33.3%,#2d2a4a 33.3% 66.6%,#fff 66.6% 83.3%,#a51931 83.3%)}
+.flag-br{background:#009b3a}
+.flag-br::before{content:"";position:absolute;left:3px;top:1.5px;width:12px;height:8px;background:#fedf00;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.flag-br::after{content:"";position:absolute;left:7px;top:4px;width:4px;height:4px;border-radius:50%;background:#002776}
+.flag-my{background:repeating-linear-gradient(#cc0001 0 1.4px,#fff 1.4px 2.8px)}
+.flag-my::before{content:"";position:absolute;left:0;top:0;width:10px;height:7px;background:#010066}
+.flag-my::after{content:"";position:absolute;left:3px;top:1.5px;width:3px;height:3px;border-radius:50%;background:#fc0}
+
+/* ---------- Ambiente ---------- */
+.amb{display:grid;grid-template-columns:1fr minmax(220px,300px) 1fr;gap:1.5rem 2rem;align-items:center}
+.amb .foto-central{aspect-ratio:1/1;border-radius:18px}
+.amb-baixo{display:grid;grid-template-columns:minmax(150px,240px) 1fr minmax(150px,240px);gap:2rem;align-items:center;margin-top:2.5rem}
+.circulo{aspect-ratio:1/1;border-radius:50%;box-shadow:0 0 40px rgba(210,170,230,.45)}
+
+/* ---------- Equipe ---------- */
+.equipe-texto p{margin-bottom:.9rem}
+.membros{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;text-align:center}
+.membro .foto{width:min(170px,100%);aspect-ratio:1/1;border-radius:50%;margin:0 auto .8rem}
+.membro h2{font-weight:400;letter-spacing:.22em;color:var(--ouro-esc);font-size:.85rem;text-transform:uppercase}
+.membro span{display:block;letter-spacing:.2em;font-size:.6rem;color:var(--ouro-esc);text-transform:uppercase}
+.cta{display:inline-block;margin-top:1rem;padding:.7rem 1.6rem;border:1px solid var(--ouro-esc);color:var(--ouro-esc);
+  text-decoration:none;letter-spacing:.15em;font-size:.78rem;text-transform:uppercase}
+.cta:hover{background:var(--ouro-esc);color:#fff}
+
+/* ---------- WhatsApp / Delivery / FAQ ---------- */
+.zap{max-width:760px;margin:0 auto;padding:2.5rem 1.4rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.zap .numero{font-weight:700;letter-spacing:.25em;font-size:.95rem}
+.zap .img-fada{width:208px;height:208px;border:1px solid #111;border-radius:50%;background-size:75%;background-color:#fff}
+.zap .nome{font-weight:700;letter-spacing:.3em;font-size:.7rem;text-transform:uppercase;line-height:1.5}
+.zap .caixa{background:#e5e5e5;border:1px solid #111;border-radius:10px;padding:1.4rem 1.6rem;width:100%;font-size:1.1rem}
+.zap .btn{display:block;text-align:center;text-decoration:underline;color:#111;border:1px solid #111;border-radius:40px;padding:.9rem 2rem;min-width:min(100%,290px)}
+.zap .btn.primario{background:#c5cfec}
+.zap .btn:hover{filter:brightness(.96)}
+.zap .zap-logo{display:flex;align-items:center;gap:.8rem;font-size:1.05rem}
+.zap .zap-logo svg{width:44px;height:44px}
+
+/* ---------- 404 ---------- */
+.nf{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:860px){
+  .home{grid-template-columns:1fr;padding:3rem 0 4rem;gap:2rem}
+  .painel{width:min(92%,475px)}
+  .duas-col{grid-template-columns:1fr}
+  .tres{grid-template-columns:1fr}
+  .amb,.amb-baixo{grid-template-columns:1fr}
+  .amb .foto-central{max-width:300px;margin:0 auto;width:100%}
+  .circulo{max-width:230px;margin:0 auto;width:100%}
+  .membros{grid-template-columns:repeat(2,1fr)}
+  .topo h1{font-size:1.3rem}
+  .cardapio{padding:3.5rem 1.2rem 1.5rem}
+  .cardapio-fada{left:0;width:90px}
+}
