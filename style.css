@@ -18,7 +18,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 /* ---------- Imagens como fundo (sem menu "abrir imagem em nova guia") ---------- */
 .img{background-repeat:no-repeat;background-position:center;background-size:cover;display:block}
-.img-fada{background-image:url("FAA.png");background-size:contain}
+.img-fada{background-image:url("FDA.png");background-size:contain}
 .img-amb1{background-image:url("PRP.jpg")}
 .img-amb2{background-image:url("PUP.jpg")}
 .img-amb3{background-image:url("PLE.jpg")}
