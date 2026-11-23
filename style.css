@@ -18,14 +18,14 @@ body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 /* ---------- Imagens como fundo (sem menu "abrir imagem em nova guia") ---------- */
 .img{background-repeat:no-repeat;background-position:center;background-size:cover;display:block}
-.img-fada{background-image:url("../img/fada.png");background-size:contain}
-.img-amb1{background-image:url("../img/ambiente-1.jpg")}
-.img-amb2{background-image:url("../img/ambiente-2.jpg")}
-.img-amb3{background-image:url("../img/ambiente-3.jpg")}
-.img-gabrielle{background-image:url("../img/equipe-gabrielle.jpg");background-size:185%;background-position:50% 30%}
-.img-julia{background-image:url("../img/equipe-julia.jpg");background-position:50% 25%}
-.img-gabrielly{background-image:url("../img/equipe-gabrielly.jpg")}
-.img-lorenzo{background-image:url("../img/equipe-lorenzo.jpg");background-position:50% 25%}
+.img-fada{background-image:url("FAA.png");background-size:contain}
+.img-amb1{background-image:url("PRP.jpg")}
+.img-amb2{background-image:url("PUP.jpg")}
+.img-amb3{background-image:url("PLE.jpg")}
+.img-gabrielle{background-image:url("GBE.jpg");background-size:185%;background-position:50% 30%}
+.img-julia{background-image:url("JHA.jpg");background-position:50% 25%}
+.img-gabrielly{background-image:url("GBY.jpg")}
+.img-lorenzo{background-image:url("L0Z.jpg");background-position:50% 25%}
 
 /* ---------- Home ---------- */
 .home{position:relative;overflow:hidden;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;
